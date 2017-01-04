@@ -1,5 +1,7 @@
 # Compression
 
+[![Gem Version](https://badge.fury.io/rb/compression-binaries.svg)](https://badge.fury.io/rb/compression-binaries)
+
 Ships zopfli and brotli binaries
 
 
@@ -34,32 +36,34 @@ zopfli: 1.0.1 (22 Aug 2015)
 
 ## Update 3rd party instructions
 
-``
+```
 git submodules init
 git submodules update
 
 cd brotli
+git fetch
 git checkout vSOMEBRANCH
 make
 
 cd ../zopfli
+git fetch
 git checkout vSOMEBRANCH
 make
-``
+```
 
 * Copy over the binaries in brotli/bin/bro to the correct architecture in libexec.
 * Copy over the binaries in zopfli/zopfli to the correct architecture in libexec.
-
+* Commit changes to submodules & libexec binaries
 
 * Do that step twice, once on a linux (64bit) and OSX/Darwin machine
 * 32bit version: There is a Dockerfile to make a quick 32bit env.
 
 Run ``rake run_docker``
 
-``
+```
 cd /build/zopfli/ && make && cp /build/zopfli/zopfli /build/libexec/zopfli-linux-x86
 cd /build/brotli/ && make && cp /build/brotli/bin/bro /build/libexec/bro-linux-x86
-``
+```
 
 ## License
 
