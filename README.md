@@ -50,6 +50,17 @@ make
 * Copy over the binaries in brotli/bin/bro to the correct architecture in libexec.
 * Copy over the binaries in zopfli/zopfli to the correct architecture in libexec.
 
+
+* Do that step twice, once on a linux (64bit) and OSX/Darwin machine
+* 32bit version: There is a Dockerfile to make a quick 32bit env.
+
+Run ``rake run_docker``
+
+``
+cd /build/zopfli/ && make && cp /build/zopfli/zopfli /build/libexec/zopfli-linux-x86
+cd /build/brotli/ && make && cp /build/brotli/bin/bro /build/libexec/bro-linux-x86
+``
+
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
