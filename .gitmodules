@@ -1,3 +1,6 @@
 [submodule "brotli"]
 	path = brotli
 	url = https://github.com/google/brotli.git
+[submodule "zopfli"]
+	path = zopfli
+	url = https://github.com/google/zopfli.git
